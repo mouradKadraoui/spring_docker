@@ -53,7 +53,7 @@ jobs:
           script: |
             cd ..
             cd /home/tp1/mouradKadraoui
-            docker pull mouradkadraoui/spring_docker
+            docker pull ${{ secrets.DOCKER_USERNAME }}/spring_docker
             docker stop container-mourad || true
             docker rm container-mourad || true
-            docker run -d --name container-mourad -p 8037:8037 -v /home/tp1/mouradKadraoui:/app mouradkadraoui/spring_docker
+            docker run -d --name container-mourad -p 8037:8037 -v /home/tp1/mouradKadraoui:/app ${{ secrets.DOCKER_USERNAME }}/spring_docker
