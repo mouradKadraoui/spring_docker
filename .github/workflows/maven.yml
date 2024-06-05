@@ -56,4 +56,4 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/spring_docker
             docker stop container-mourad || true
             docker rm container-mourad || true
-            docker run -d --name container-mourad -p 8037:8037 -v /home/tp1/mouradKadraoui:/app ${{ secrets.DOCKER_USERNAME }}/spring_docker
+            docker run -d --name container-mourad -p 8037:8080 -v /home/tp1/mouradKadraoui:/app ${{ secrets.DOCKER_USERNAME }}/spring_docker
